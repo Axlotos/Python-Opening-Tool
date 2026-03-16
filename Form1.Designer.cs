@@ -33,6 +33,7 @@
             vsCodeButton = new Button();
             vsButton = new Button();
             pythonButton = new Button();
+            themeToggle = new DomainUpDown();
             SuspendLayout();
             // 
             // label
@@ -74,11 +75,25 @@
             pythonButton.UseVisualStyleBackColor = true;
             pythonButton.Click += pythonButton_Click;
             // 
+            // themeToggle
+            // 
+            themeToggle.Items.Add("Light");
+            themeToggle.Items.Add("Dark");
+            themeToggle.Location = new Point(107, 181);
+            themeToggle.Name = "themeToggle";
+            themeToggle.ReadOnly = true;
+            themeToggle.Size = new Size(58, 23);
+            themeToggle.TabIndex = 1;
+            themeToggle.Text = "Theme";
+            themeToggle.SelectedItemChanged += themeToggle_SelectedItemChanged;
+            // 
             // PythonOpeningTool
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(284, 236);
+            Controls.Add(themeToggle);
             Controls.Add(pythonButton);
             Controls.Add(vsButton);
             Controls.Add(vsCodeButton);
@@ -99,5 +114,6 @@
         private Button vsCodeButton;
         private Button vsButton;
         private Button pythonButton;
+        private DomainUpDown themeToggle;
     }
 }
