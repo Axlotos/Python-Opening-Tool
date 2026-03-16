@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PythonOpeningTool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55b8b2e475c6a42c8e66fba4000d6a968d9300f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44109623087b8c371034fca7dfead4a7912bfe9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("PythonOpeningTool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PythonOpeningTool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
