@@ -8,12 +8,14 @@ namespace PythonOpeningTool
         private string file;
         private string vsPath;
         private string theme;
-        public PythonOpeningTool(string fileArg, string vsPathArg, string themeArg)
+        private string themeTxtPath;
+        public PythonOpeningTool(string fileArg, string vsPathArg, string themeArg, string themeTxtPathArg)
         {
             InitializeComponent();
             this.file = fileArg;
             this.vsPath = vsPathArg;
             this.theme = themeArg;
+            this.themeTxtPath = themeTxtPathArg;
 
             // Colour Borders
             vsCodeButton.FlatStyle = FlatStyle.Flat;
@@ -75,7 +77,7 @@ namespace PythonOpeningTool
             // Update Colours
             if (themeToggle.Text == "Dark")
             {
-                File.WriteAllText("theme.txt", "dark");
+                File.WriteAllText(themeTxtPath, "dark");
                 this.BackColor = Color.Black;
                 label.BackColor = Color.Black; label.ForeColor = Color.White; // Label
                 vsCodeButton.BackColor = Color.Black; vsCodeButton.ForeColor = Color.White; // VS Code Button
@@ -86,7 +88,7 @@ namespace PythonOpeningTool
 
             else
             {
-                File.WriteAllText("theme.txt", "light");
+                File.WriteAllText(themeTxtPath, "light");
                 this.BackColor = Color.White;
                 label.BackColor = Color.White; label.ForeColor = Color.Black;
                 vsCodeButton.BackColor = Color.White; vsCodeButton.ForeColor = Color.Black;

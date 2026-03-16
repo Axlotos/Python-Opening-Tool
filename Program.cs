@@ -26,17 +26,17 @@ namespace PythonOpeningTool
             string vsPathFilePath = Path.Combine(exeFolder, "visualStudioPath.txt");
 
             // Combine the Folder Path With the File Name for the Theme
-            string themePath = Path.Combine(exeFolder, "theme.txt");
+            string themeTxtPath = Path.Combine(exeFolder, "theme.txt");
 
             // Read the Visual Studio Path Text File and Save it as a Variable
             string vsPath = File.ReadAllText(vsPathFilePath);
 
             // Read the Theme Text File and Save it as a Variable
-            string theme = File.ReadAllText(themePath);
+            string theme = File.ReadAllText(themeTxtPath);
 
             // Start the Main Script
             ApplicationConfiguration.Initialize();
-            Application.Run(new PythonOpeningTool(file, vsPath, theme));
+            Application.Run(new PythonOpeningTool(file, vsPath, theme, themeTxtPath));
         }
     }
 }
