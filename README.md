@@ -7,10 +7,10 @@ note: This application is for Windows only as it uses WinForms.
 ## How to set it up:
 
 ### 1 Download:
-Download Python Opening Tool. You can put it anywhere this is not the final executable and you will delete these files after.
+Download Python Opening Tool. You can put it anywhere this is not the final executable and you will delete these files after this.
 
 ### 2 Compile (only do this step if you downloaded the code not the executable directly)
-To compile the code you just downloaded you need to first download .NET from https://dotnet.microsoft.com/en-us/download (if you already have .NET just skip this step). Download the installer and install .NET. Open the terminal in the folder you downloaded Python Opening Tool and run this command:
+To compile the code you just downloaded you need to first download .NET from https://dotnet.microsoft.com/en-us/download (if you already have .NET just skip this step). **Make sure you get version 10.** Download the installer and install .NET. Open the terminal in the folder you downloaded Python Opening Tool and run this command:
 ```
 dotnet publish
 ```
@@ -19,7 +19,7 @@ This compiles the code into an executable.
 This also creates two new folders, one called obj and one called bin. Go into bin\Release\net10.0-windows7.0\publish, you will see the compiled code. Copy ALL the files and paste them into a safe spot like a folder on your C: drive call PythonOpeningTool. You also need to copy and paste visualStudioPath.txt (from the same directory as this README) into that folder.
 
 ### 3 How to open code with this:
-In File Explorer right click any Python File (.py). Click "Open with". Click "Choose another app". Scroll down and click "Choose an app on your PC". Navigate to where you saved Python Opening Tool and click "Open". You will be put back where you got when you clicked "Choose another app" except this time Python Opening Tool will be an option. Click it and select "Always" if you want it as you default app. If you want to use it only every so often click "Just once" it will stay there for later. You can now open Python files with Python Opening Tool. If you didn't download .NET for compiling the code (or you don't already have it) and instead just downloaded the executable then a window will pop up telling you to download .NET. The window will tell you what to do. (I think .NET is required for apps that use WinForms which is why it asks you to install it but thats just my guess.)
+In File Explorer right click any Python File (.py). Click "Open with". Click "Choose another app". Scroll down and click "Choose an app on your PC". Navigate to where you saved Python Opening Tool and click "Open". You will be put back where you got when you clicked "Choose another app" except this time Python Opening Tool will be an option. Click it and select "Always" if you want it as you default app. If you want to use it only every so often click "Just once" it will stay there for later. You can now open Python files with Python Opening Tool. A window will pop up telling you to download .NET Desktop Runtime (if of course you haven't already). The window will tell you what to do. (I think .NET Desktop Runtime is required for apps that use WinForms which is why it asks you to install it but thats just my guess.)
 
 ### 4 Tell File Explorer to call Python files "Python Source Files" (optional):
 By default, File Explorer takes the file extention (py), capitalizes it (PY), and adds "File" to the end (PY File). If you want File Explorer to call them Python Source Files then follow these two steps:
