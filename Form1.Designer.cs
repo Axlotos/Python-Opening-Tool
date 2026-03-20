@@ -34,6 +34,11 @@
             vsButton = new Button();
             pythonButton = new Button();
             themeToggle = new DomainUpDown();
+            customAppButton = new Button();
+            customAppTextBox = new TextBox();
+            customAppLabel = new Label();
+            customAppTextBoxBorder = new Panel();
+            customAppTextBoxBorder.SuspendLayout();
             SuspendLayout();
             // 
             // label
@@ -47,7 +52,7 @@
             // 
             // vsCodeButton
             // 
-            vsCodeButton.Location = new Point(54, 68);
+            vsCodeButton.Location = new Point(54, 53);
             vsCodeButton.Name = "vsCodeButton";
             vsCodeButton.Size = new Size(164, 25);
             vsCodeButton.TabIndex = 1;
@@ -57,7 +62,7 @@
             // 
             // vsButton
             // 
-            vsButton.Location = new Point(54, 99);
+            vsButton.Location = new Point(54, 84);
             vsButton.Name = "vsButton";
             vsButton.Size = new Size(164, 25);
             vsButton.TabIndex = 2;
@@ -67,7 +72,7 @@
             // 
             // pythonButton
             // 
-            pythonButton.Location = new Point(54, 130);
+            pythonButton.Location = new Point(54, 115);
             pythonButton.Name = "pythonButton";
             pythonButton.Size = new Size(164, 25);
             pythonButton.TabIndex = 3;
@@ -77,6 +82,7 @@
             // 
             // themeToggle
             // 
+            themeToggle.BackColor = SystemColors.Control;
             themeToggle.Items.Add("Light");
             themeToggle.Items.Add("Dark");
             themeToggle.Location = new Point(107, 181);
@@ -87,12 +93,58 @@
             themeToggle.Text = "Theme";
             themeToggle.SelectedItemChanged += themeToggle_SelectedItemChanged;
             // 
+            // customAppButton
+            // 
+            customAppButton.Location = new Point(54, 146);
+            customAppButton.Name = "customAppButton";
+            customAppButton.Size = new Size(78, 23);
+            customAppButton.TabIndex = 4;
+            customAppButton.Text = "Custom";
+            customAppButton.UseVisualStyleBackColor = true;
+            customAppButton.Click += customAppButton_Click;
+            // 
+            // customAppTextBox
+            // 
+            customAppTextBox.BackColor = Color.White;
+            customAppTextBox.BorderStyle = BorderStyle.None;
+            customAppTextBox.Dock = DockStyle.Fill;
+            customAppTextBox.Font = new Font("Segoe UI", 9F);
+            customAppTextBox.Location = new Point(1, 1);
+            customAppTextBox.Multiline = true;
+            customAppTextBox.Name = "customAppTextBox";
+            customAppTextBox.Size = new Size(78, 21);
+            customAppTextBox.TabIndex = 5;
+            customAppTextBox.TextChanged += customAppTextBox_TextChanged;
+            customAppTextBox.KeyDown += customAppTextBox_KeyDown;
+            // 
+            // customAppLabel
+            // 
+            customAppLabel.AutoSize = true;
+            customAppLabel.Location = new Point(224, 149);
+            customAppLabel.Name = "customAppLabel";
+            customAppLabel.Size = new Size(53, 30);
+            customAppLabel.TabIndex = 6;
+            customAppLabel.Text = "<- select\r\n      app";
+            // 
+            // customAppTextBoxBorder
+            // 
+            customAppTextBoxBorder.BackColor = Color.Gray;
+            customAppTextBoxBorder.Controls.Add(customAppTextBox);
+            customAppTextBoxBorder.Location = new Point(138, 146);
+            customAppTextBoxBorder.Name = "customAppTextBoxBorder";
+            customAppTextBoxBorder.Padding = new Padding(1);
+            customAppTextBoxBorder.Size = new Size(80, 23);
+            customAppTextBoxBorder.TabIndex = 7;
+            // 
             // PythonOpeningTool
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(284, 236);
+            Controls.Add(customAppTextBoxBorder);
+            Controls.Add(customAppLabel);
+            Controls.Add(customAppButton);
             Controls.Add(themeToggle);
             Controls.Add(pythonButton);
             Controls.Add(vsButton);
@@ -104,6 +156,8 @@
             Name = "PythonOpeningTool";
             ShowInTaskbar = false;
             Text = "Python Opening Tool";
+            customAppTextBoxBorder.ResumeLayout(false);
+            customAppTextBoxBorder.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -115,5 +169,9 @@
         private Button vsButton;
         private Button pythonButton;
         private DomainUpDown themeToggle;
+        private Button customAppButton;
+        private TextBox customAppTextBox;
+        private Label customAppLabel;
+        private Panel customAppTextBoxBorder;
     }
 }

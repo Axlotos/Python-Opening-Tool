@@ -16,27 +16,51 @@ namespace PythonOpeningTool
                 return;
             }
 
-            string file = args[0];
-
-
-            // Get the Folder Fhere this .exe is Located
+            // Get the Folder Where this .exe is Located
             string exeFolder = AppContext.BaseDirectory;
 
             // Combine the Folder Path With the File Name for the Visual Studio Path
-            string vsPathFilePath = Path.Combine(exeFolder, "visualStudioPath.txt");
+            string vsPathTxtPath = Path.Combine(exeFolder, "visualStudioPath.txt");
 
             // Combine the Folder Path With the File Name for the Theme
             string themeTxtPath = Path.Combine(exeFolder, "theme.txt");
 
+            // Combine the Folder Path With the File Name for the Custom App Path
+            string customAppTxtPath = Path.Combine(exeFolder, "customAppPath.txt");
+
+            if (!File.Exists(vsPathTxtPath))
+            {
+                MessageBox.Show("There is no visualStudioPath.txt in the directrory of the Python Opening Tool executable");
+                return;
+            }
+
+            if (!File.Exists(themeTxtPath))
+            {
+                MessageBox.Show("There is no theme.txt in the directrory of the Python Opening Tool executable");
+                return;
+            }
+
+            if (!File.Exists(customAppTxtPath))
+            {
+                MessageBox.Show("There is no customAppPath.txt in the directrory of the Python Opening Tool executable");
+                return;
+            }
+
             // Read the Visual Studio Path Text File and Save it as a Variable
-            string vsPath = File.ReadAllText(vsPathFilePath);
+            string vsPath = File.ReadAllText(vsPathTxtPath);
 
             // Read the Theme Text File and Save it as a Variable
             string theme = File.ReadAllText(themeTxtPath);
 
+            // Read the Custom App Text File and Save it as a Variable
+            string customApp = File.ReadAllText(customAppTxtPath);
+
+
+            string file = args[0];
+
             // Start the Main Script
             ApplicationConfiguration.Initialize();
-            Application.Run(new PythonOpeningTool(file, vsPath, theme, themeTxtPath));
+            Application.Run(new PythonOpeningTool(file, vsPath, theme, themeTxtPath, customApp, customAppTxtPath));
         }
     }
 }
