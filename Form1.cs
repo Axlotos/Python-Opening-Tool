@@ -150,9 +150,6 @@ namespace PythonOpeningTool
             {
                 // Stop the key press from adding to the text box
                 e.SuppressKeyPress = true;
-
-                // Clear the text
-                customAppTextBox.Text = "";
             }
         }
     }
